@@ -49,6 +49,11 @@ public class TaskController {
         Task updatedTask = taskService.updateTask(id, task);
         return updatedTask != null ? ResponseEntity.ok(updatedTask) : ResponseEntity.notFound().build();
     }
+    @DeleteMapping("/{id}")
+    @ApiOperation(value = "Delete task by ID")
+    public ResponseEntity<Void> deleteTask(@PathVariable int id) {
+        return taskService.deleteTask(id) ? ResponseEntity.noContent().build() : ResponseEntity.notFound().build();
+    }
 
 
 }

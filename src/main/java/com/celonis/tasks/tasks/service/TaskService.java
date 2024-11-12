@@ -45,4 +45,11 @@ public class TaskService {
         }
         return null;
     }
+    public boolean deleteTask(int id) {
+        if (taskRepository.existsById(id)) {
+            taskRepository.deleteById(id);
+            return true;
+        }
+        return false;
+    }
 }
