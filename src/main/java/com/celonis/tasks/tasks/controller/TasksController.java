@@ -2,6 +2,7 @@ package com.celonis.tasks.tasks.controller;
 
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -11,5 +12,10 @@ public class TasksController {
     @RequestMapping("/")
     public @ResponseBody String greeting() {
         return "Hello, World - Checking Tasks APP.";
+    }
+
+    @RequestMapping("/getAllTasks")
+    public @ResponseBody String getAllTasks(){
+        return "testing getAllTasks";
     }
 }
