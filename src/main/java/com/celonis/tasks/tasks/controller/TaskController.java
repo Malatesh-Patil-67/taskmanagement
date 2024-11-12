@@ -42,4 +42,13 @@ public class TaskController {
     public Task createTask(@RequestBody Task task) {
         return taskService.createTask(task);
     }
+
+    @PutMapping("/{id}")
+    @ApiOperation(value = "Update task by ID")
+    public ResponseEntity<Task> updateTask(@PathVariable int id, @RequestBody Task task) {
+        Task updatedTask = taskService.updateTask(id, task);
+        return updatedTask != null ? ResponseEntity.ok(updatedTask) : ResponseEntity.notFound().build();
+    }
+
+
 }

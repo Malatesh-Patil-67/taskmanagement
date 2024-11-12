@@ -32,4 +32,17 @@ public class TaskService {
         task.setUpdatedAt(new java.sql.Date(System.currentTimeMillis()));
         return taskRepository.save(task);
     }
+
+    public Task updateTask(int id, Task task) {
+        Optional<Task> existingTask = taskRepository.findById(id);
+        if (existingTask.isPresent()) {
+            Task t = existingTask.get();
+            t.setTitle(task.getTitle());
+            t.setDescription(task.getDescription());
+            t.setStatus(task.getStatus());
+            t.setUpdatedAt(new java.sql.Date(System.currentTimeMillis()));
+            return taskRepository.save(t);
+        }
+        return null;
+    }
 }
