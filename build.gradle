@@ -41,10 +41,26 @@ dependencies {
 	implementation 'io.springfox:springfox-swagger-ui:2.9.2'
 
 	// Springdoc OpenAPI dependencies for Spring Boot 3.x
-	implementation 'org.springdoc:springdoc-openapi-ui:2.0.0'
-	implementation 'org.springdoc:springdoc-openapi-data-rest:2.0.0'
+//	implementation 'org.springdoc:springdoc-openapi-ui:2.0.0'
+//	implementation 'org.springdoc:springdoc-openapi-data-rest:2.0.0'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	// JUnit 5 for unit testing
+	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+	testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+
+	// Spring Boot testing support
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	// MockMvc for testing REST API
+	testImplementation 'org.springframework.boot:spring-boot-starter-web'
+
+	// Mockito for mocking dependencies in tests
+	testImplementation 'org.mockito:mockito-core:4.3.1'
+
+	// Optional: Testcontainers for running an in-memory database for integration tests
+	testImplementation 'org.testcontainers:testcontainers:1.17.3'
 }
 
 tasks.named('test') {
