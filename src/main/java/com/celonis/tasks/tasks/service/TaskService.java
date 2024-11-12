@@ -26,4 +26,10 @@ public class TaskService {
     public Optional<Task> getTaskById(int id) {
         return taskRepository.findById(id);
     }
+
+    public Task createTask(Task task) {
+        task.setCreatedAt(new java.sql.Date(System.currentTimeMillis()));
+        task.setUpdatedAt(new java.sql.Date(System.currentTimeMillis()));
+        return taskRepository.save(task);
+    }
 }
