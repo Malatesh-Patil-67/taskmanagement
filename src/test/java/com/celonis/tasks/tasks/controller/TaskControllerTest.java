@@ -42,7 +42,7 @@ public class TaskControllerTest {
         when(taskService.getAllTasks()).thenReturn(Arrays.asList(task1, task2));
 
         // Perform the GET request
-        mockMvc.perform(get("/tasks"))
+        mockMvc.perform(get("/tasks/"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$[0].id").value(1))
                 .andExpect(jsonPath("$[1].id").value(2));
@@ -76,7 +76,7 @@ public class TaskControllerTest {
         when(taskService.createTask(any(Task.class))).thenReturn(task);
 
         // Perform the POST request
-        mockMvc.perform(post("/tasks")
+        mockMvc.perform(post("/tasks/")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("{\"title\":\"New Task\", \"description\":\"New task description\", \"status\":\"Pending\"}"))
                 .andExpect(status().isOk())
