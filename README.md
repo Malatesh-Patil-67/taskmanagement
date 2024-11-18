@@ -42,7 +42,7 @@ Docker: For containerized deployment.
 
 #### Clone the repository:
 
-git clone https://github.com/Malatesh-Patil-67/taskmanagement.git
+git clone https://github.com/Malatesh-Patil-67/taskmanagement.git  
 cd taskmanagement
 
 #### Set up the MySQL database:
